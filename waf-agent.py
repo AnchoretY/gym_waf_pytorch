@@ -30,7 +30,7 @@ def train(dqn,episode,max_episode_steps,memory_capacity):
 
         done = False
         # 样本成功完成任务或到达可走最大step结束循环
-        while not done or step<max_episode_steps:                                                
+        while not done and step<max_episode_steps:                                                
             step += 1
             a = dqn.choose_action(s)                                        # 输入该步对应的状态s，选择动作
             s_, r, done, info = env.step(a)                                 # 执行动作，获得反馈
